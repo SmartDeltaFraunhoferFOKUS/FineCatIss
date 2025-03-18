@@ -1,0 +1,21 @@
+[selected_repository]
+user_name = "vaadin" 
+repo_name = "flow"
+fetch_new_issues = true
+
+[logging]
+logger_name = "StandardLogger"
+log_file_name = "app.log"
+
+[folder_structure]
+data_folder = "data"
+logs_folder = "logs"
+model_folder = "model"
+notebooks_folder = "notebooks"
+results_folder = "results"
+
+[config_files]
+logging_config_file_name = "logging_config.yaml"
+repo_data_config_file_name = "repo_data_config.toml"
+label_config_file_name = "label_config.toml"
+ml_config_file_name = "ml_config.toml"

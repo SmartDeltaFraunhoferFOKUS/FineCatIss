@@ -1,0 +1,15 @@
+["vaadin/flow"]
+bug_labels = ["bug", "BFP"]
+enhancement_labels = ["enhancement", "feature request"]
+support_labels = ["documentation", "question", "help wanted"]
+prediction_bug_label = "bug_p"
+prediction_enhancement_label = "enhancement_p"
+prediction_support_label = "help wanted_p"
+
+["grafana/grafana"]
+bug_labels = ["type/bug"]
+enhancement_labels = ["type/feature-request", "kind/enhancement", "discussion/consideration"]
+support_labels = ["type/docs", "type/question", "bot/question"]
+prediction_bug_label = "type/bug"
+prediction_enhancement_label = "kind/enhancement"
+prediction_support_label = "type/support"

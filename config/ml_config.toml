@@ -1,0 +1,61 @@
+[model]
+# use_finetuned_model = false # Not implemented yet
+# File name of the pre-trained CatIss model
+pretrained_model_file_name = "pytorch_model.bin"
+# finetuned_model_folder = "finetuned_model" # Not implemented yet
+# finetuned_model_file_name = "roberta" # Not implemented yet
+
+[mode]
+# Enables model evaluation (disabling evaluation makes the model use all labeled data for fine-tuning)
+evaluation = true
+# Enables prediction for unlabeled data (disabling this is only for testing model performance)
+test = true
+# Split between train and validation data (test data always is unlabeled data only)
+validation_split_percentage = 0.2
+# Random state for train-validation split to ensure same splits every time (uncomment to disable it)
+random_state = 42
+
+[data]
+[data.keys]
+# The following are the keys in the data dictionary, which are required for the model (they also represent the columns in the Pandas dataframes)
+# Issue number
+number = "number"
+# List of all labels of issue
+label = "labels"
+# Creation time of issue
+time = "created_at"
+# URL to repository (not included in .json, calculated during runtime)
+repo = "repository_url"
+# Title of issue
+title = "title"
+# Description of issue
+body = "description"
+# Author associtation of issue creator (Default value being the string "NONE")
+author = "author_association"
+# URL to issue (not included in .json, calculated during runtime)
+url = "url"
+# Key for the predicted labels for both dictionary/json and df/csv (has to be None by default)
+predicted_label = "predicted_label"
+# The following are merely the column names for the Pandas dataframes, that are fed into the model (both are calculated during runtime)
+label_col = "labels"
+text_col = "text"
+
+# [data.preprocessing] # Disabled in config as well as in code due to reason below. If one really wants to test these, the corresponding code has to be uncommented as well!
+# # Changing these parameters does affect the data preprocessing. Adapting them was never tested and might negatively impact or even break the model. Therefore we recommend to not change these.
+# max_title_length = 30
+# max_body_length = 170
+# punctuations = '!"$%&\()*,/:;<=>[\\]^`{|}~+#@-`'
+# issue_regex = '#[0-9]+'
+# function_regex = '[a-zA-Z][a-zA-Z0-9_.]*\([a-zA-Z0-9_, ]*\)'
+# ascii_regex = '[^\x00-\x7f]'
+
+[data.export]
+# Export train and test data as csvs
+export_ml_data_csvs = false
+export_finetuned_model = false # Not implemented yet
+# Export predictions as csv with columns: number, predicted_labels_col
+export_predictions = true
+# Update predicted labels of json file with new predictions
+update_issue_data = true
+# Add predicted labels to issues of GitHub repository. Custom labels for that can be set in: label_config.toml (This requires write/push permissions!)
+update_github_labels = false

@@ -1,0 +1,9 @@
+# Format:
+# ["{USER_NAME}/{REPOSITORY_NAME}"]
+# repo_data_file = "path/to/repo_data.json" # Default: "{USER_NAME}_{REPOSITORY_NAME}_repo_data.json"
+
+["vaadin/flow"]
+repo_data_file = "vaadin_flow_repo_data.json"
+
+["grafana/grafana"]
+repo_data_file = "grafana_grafana_repo_data.json"
